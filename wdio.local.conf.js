@@ -32,8 +32,7 @@ export const config = {
   // If you are calling `wdio` from an NPM script (see https://docs.npmjs.com/cli/run-script),
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
-  //
-  specs: ['./test/specs/**/*.e2e.js'],
+  specs: ['./test/specs/*.js'],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -71,6 +70,7 @@ export const config = {
           'goog:chromeOptions': {
             args: [
               '--no-sandbox',
+              '--headless',
               '--disable-infobars',
               '--disable-gpu',
               '--window-size=1920,1080'
