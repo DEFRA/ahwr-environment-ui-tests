@@ -1,6 +1,9 @@
 #!/bin/sh
 
 echo "run_id: $RUN_ID"
+
+./cleanup.sh
+
 npm test
 
 npm run report:publish
