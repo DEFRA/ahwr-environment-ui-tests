@@ -36,7 +36,9 @@ npm install
 
 ### Running local tests
 
-Start application you are testing on the url specified in `baseUrl` [wdio.local.conf.js](wdio.local.conf.js)
+Make sure you have DEVELOPER_API_KEY, RUN_ENVIRONMENT, and ENVIRONMENT set in your .env file.
+
+RUN_ENVIRONMENT will be "local" and ENVIRONMENT will typically be "dev" but it can be whatever environment you want to run against.
 
 ```bash
 npm run test:local
