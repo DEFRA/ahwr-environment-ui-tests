@@ -18,6 +18,8 @@ CURL_OPTS=(-s -w "%{http_code}")
 if [ "$RUN_ENVIRONMENT" = "local" ]; then
   CURL_OPTS+=(-H "x-api-key: $DEVELOPER_API_KEY")
   API_URL="https://ephemeral-protected.api.$ENVIRONMENT.cdp-int.defra.cloud/ahwr-application-backend"
+else
+  CURL_OPTS+=(-H "x-api-key: $TESTS_UI_API_KEY")
 fi
 
 # Run curl, append status code to body
