@@ -5,7 +5,7 @@ import {
   DEFRA_ID_PASSWORD,
   PUBLIC_USER_UI_URL
 } from '../utils/constants'
-import { clickOn, setText } from '../utils/helpers'
+import { clickOn, setText, selectFundingType } from '../utils/helpers'
 import { randomUUID } from 'node:crypto'
 
 describe('Login and complete base user journey', async function () {
@@ -29,6 +29,8 @@ describe('Login and complete base user journey', async function () {
     await clickOn(SELECTORS.ACCEPT_COOKIES_BUTTON)
     await clickOn(SELECTORS.getConfirmCheckDetailsSelector('yes'))
     await clickOn(SELECTORS.SUBMIT_BUTTON)
+
+    await selectFundingType('IAHW')
 
     // Into apply journey
     await clickOn(SELECTORS.AGREE_BUTTON)
