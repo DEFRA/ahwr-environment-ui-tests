@@ -9,7 +9,7 @@ import { clickOn, setText, selectFundingType } from '../utils/helpers'
 import { randomUUID } from 'node:crypto'
 
 describe('Login and complete base user journey', async function () {
-  it('can log into an account, create an agreement and create a claim', async () => {
+  it('can log into an account, create an agreement and create a claim for livestock', async () => {
     await browser.url(PUBLIC_USER_UI_URL)
     await setText(SELECTORS.DEFRA_ID_CRN_FIELD, DEFRA_ID_CRN)
     await setText(SELECTORS.DEFRA_ID_PASSWORD_FIELD, DEFRA_ID_PASSWORD)
@@ -32,18 +32,18 @@ describe('Login and complete base user journey', async function () {
 
     await selectFundingType('IAHW')
 
-    // Into apply journey
+    // Into livestock apply journey
     await clickOn(SELECTORS.AGREE_BUTTON)
     await clickOn(SELECTORS.AGREE_BUTTON)
     await clickOn(SELECTORS.AGREE_BUTTON)
     await clickOn(SELECTORS.T_AND_C_CHECKBOX)
     await clickOn(SELECTORS.ACCEPTED_BUTTON)
 
-    // Navigate to dashboard page
+    // Navigate to livestock dashboard page
     await browser.url(`${PUBLIC_USER_UI_URL}vet-visits`)
     await clickOn(SELECTORS.START_CLAIM_BUTTON)
 
-    // Into claim journey for a beef review claim
+    // Into livestock claim journey for a beef review claim
     await clickOn(SELECTORS.BEEF_RADIO)
     await clickOn(SELECTORS.SUBMIT_BUTTON)
 
@@ -89,12 +89,14 @@ describe('Login and complete base user journey', async function () {
     await setText(SELECTORS.LAB_URN_FIELD, randomUUID())
     await clickOn(SELECTORS.SUBMIT_BUTTON)
 
-    await clickOn(SELECTORS.POSTIVE_TEST_RADIO)
+    await clickOn(SELECTORS.POSITIVE_TEST_RADIO)
     await clickOn(SELECTORS.SUBMIT_BUTTON)
 
     await clickOn(SELECTORS.SUBMIT_BUTTON)
 
     const code = await $('#reference').getText()
     expect(code).toMatch(/^REBC-[A-Z0-9]{4}-[A-Z0-9]{4}$/)
+
+    await clickOn(SELECTORS.SIGNOUT_BUTTON)
   })
 })
