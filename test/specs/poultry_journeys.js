@@ -39,7 +39,7 @@ describe('Login and complete base user journey', async function () {
     await clickOn(SELECTORS.ACCEPTED_BUTTON)
 
     // Navigate to poultry dashboard page
-    await browser.url(`${PUBLIC_USER_UI_URL}poultry/vet-visits`)
+    await browser.url(`${PUBLIC_USER_UI_URL}poultry/manage-claims`)
 
     // Into poultry claim journey
     await clickOn(SELECTORS.START_CLAIM_BUTTON)
