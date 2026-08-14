@@ -34,7 +34,8 @@ export const CHANGES_IN_BIOSECURITY_CLEANING =
   'input[name="changesInBiosecurity"][value="cleaning"]'
 export const COST_OF_CHANGES_NO_INTENTION =
   'input[name="costOfChanges"][value="no-intention"]'
-export const INTERVIEW_YES = 'input[name="interview"][value="yes"]'
+export const BIOSECURITY_IMPROVEMENTS_YES =
+  'input[name="biosecurityImprovements"][value="yes"]'
 
 // Text fields
 export const VISIT_DATE_DAY_FIELD = '#visit-date-day'

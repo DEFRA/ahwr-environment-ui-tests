@@ -88,8 +88,9 @@ describe('Login and complete base user journey', async function () {
     await clickOn(SELECTORS.COST_OF_CHANGES_NO_INTENTION)
     await clickOn(SELECTORS.SUBMIT_BUTTON)
 
-    // Interview page is skipped via feature flag - changes cost routes
-    // directly to check answers
+    await clickOn(SELECTORS.BIOSECURITY_IMPROVEMENTS_YES)
+    await clickOn(SELECTORS.SUBMIT_BUTTON)
+
     await browser.waitUntil(
       async () => (await browser.getUrl()).includes('/poultry/check-answers'),
       {
