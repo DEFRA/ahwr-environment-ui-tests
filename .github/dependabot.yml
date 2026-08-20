@@ -48,10 +48,6 @@ updates:
 
     versioning-strategy: increase
 
-    allow:
-      # Include direct package.json updates
-      - dependency-type: direct
-
     ignore:
       # global-agent 4.x is a known breaking change; hold on 3.x until resolved
       - dependency-name: global-agent
